@@ -1,34 +1,34 @@
 package cc3.task4;
 
 public class Hardware {
-    protected int spec, id;
-    protected String brand, type;
+    
+    protected final int SPEC, ID;
+    protected final String BRAND, TYPE;
     
     protected Hardware(String brand, int spec, String type, int id){
-        this.spec = spec;
-        this.brand = brand;
-        this.type = type;
-        this.id = id;
+        this.SPEC = spec;
+        this.BRAND = brand;
+        this.TYPE = type;
+        this.ID = id;
     }
     
     public int getSpec(){
-        return spec;
+        return SPEC;
     }
     
     public String getBrand(){
-        return brand;
+        return BRAND;
     }
     
     public String getType(){
-        return type;
+        return TYPE;
     }
     
     public int getId(){
-        return id;
+        return ID;
     }
     
     public String interpretSpec(){
-        return spec + " Spec";
+        return SPEC + " Spec";
     }
-    
 }
