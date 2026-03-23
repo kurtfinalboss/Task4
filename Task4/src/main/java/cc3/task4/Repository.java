@@ -6,7 +6,7 @@ public class Repository {
     private final String DBURL;
         
     private Repository(RepositoryBuilder builder){
-        this.DBURL = builder.DBURL;
+        this.DBURL = builder.dbUrl;
     }
         
     public List<Hardware> getAllHardware() {
@@ -32,14 +32,14 @@ public class Repository {
         return list;
     }
     public static class RepositoryBuilder{
-        private String DBURL;
+        private String dbUrl;
         
         public RepositoryBuilder setDatabasePath(){
-            this.DBURL = "jdbc:sqlite:D:\\NitbensProject\\Task_4.db";
+            this.dbUrl = "jdbc:sqlite:D:\\NitbensProject\\Task_4.db";
             return this;
         }
         public Repository build() {
-            if (DBURL == null) throw new IllegalStateException("Database path not set!");
+            if (dbUrl == null) throw new IllegalStateException("Database path not set!");
             return new Repository(this);
         }
     }
